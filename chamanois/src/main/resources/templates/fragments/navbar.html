@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Navbar</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<header th:fragment="navbar" class="rounded-bottom" style="background-color: #ff9900;">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand" th:href="@{/}">
+				<img th:src="@{https://raw.githubusercontent.com/Chama-Nois/chama_nois_final/main/imagens/icon.png}" alt=""
+					width="100">
+
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav text-center mx-auto">
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/}" target="_self">HOME</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/sobrenos}" target="_self">SOBRE NÓS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/produtos}" target="_self">PRODUTOS</a>
+					</li>
+					<li class="nav-item" sec:authorize="hasRole('ADMIN')">
+						<a class="nav-link" th:href="@{/empresas}" target="_self">EMPRESAS</a>
+					</li>
+					<li class="nav-item" sec:authorize="hasRole('ADMIN')">
+						<a class="nav-link" th:href="@{/usuarios}" target="_self">USUARIOS</a>
+					</li>
+				</ul>
+				<span class="navbar d-inline-block float-left" sec:authorize="isAnonymous()">
+					<a th:href="@{/login}" class="btn btn-outline-dark mr-3" target="_self">ENTRAR</a>
+				</span>
+				<span class="navbar d-inline-block float-right" sec:authorize="isAnonymous()">
+					<a th:href="@{/usuarios/novo}" class="btn btn-outline-dark" target="_self">CADASTRAR</a>
+				</span>
+				<span class="navbar d-inline-block float-right" sec:authorize="isAuthenticated()">
+					<a th:href="@{/logout}" class="btn btn-outline-dark" target="_self">SAIR</a>
+				</span>
+			</div>
+		</nav>
+	</header>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sobre Nós - Chama Nois</title>
+	<link rel="stylesheet" href="styles/texto.css">
+	<link rel="stylesheet" href="styles/sobreNos.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<div th:replace="~{fragments/navbar :: navbar}"></div>
+	<div class="container-corpo">
+		<header>
+			<h1>Sobre Nós - Chama Nois</h1>
+		</header>
+
+		<main>
+			<p class="about-text">Somos um grupo de 5 programadores apaixonados por tecnologia e impacto social. Nossa
+				empresa, Chama Nois, nasceu da ideia de usar a tecnologia para melhorar a vida nas comunidades e favelas
+				do Brasil.</p>
+
+			<p class="about-text">Nossa missão é fornecer um serviço de entregas acessível e confiável, atendendo áreas
+				onde os serviços de correio tradicionais têm dificuldades em operar. Acreditamos que todos merecem
+				acesso a produtos essenciais, independentemente de onde vivam.</p>
+
+			<p class="about-text">Para atender às necessidades das comunidades locais, contratamos moradores das
+				próprias áreas como entregadores. Essa abordagem não apenas gera empregos, mas também fortalece os laços
+				comunitários e proporciona aos clientes um serviço personalizado e amigável.</p>
+
+			<p class="about-text">Nosso compromisso vai além da entrega de pacotes. Estamos empenhados em promover o
+				desenvolvimento sustentável das comunidades.</p>
+
+			<p class="about-text">Junte-se a nós enquanto continuamos a inovar e a servir as comunidades que chamamos de
+				lar.</p>
+		</main>
+	</div>
+	<div th:replace="~{fragments/footer :: footer}"></div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

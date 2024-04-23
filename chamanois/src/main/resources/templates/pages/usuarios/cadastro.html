@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastro - Chama Nois</title>
+	<link rel="shortcut icon" href="https://raw.githubusercontent.com/Chama-Nois/chama_nois_final/main/imagens/icon.png"
+		type="image/x-icon">
+	<link rel="stylesheet" th:href="@{/styles/cadastro.css}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column" style="min-height: 100vh;">
+	<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+	<div class="container my-4">
+		<form class="bg-light p-4 rounded shadow" th:action="@{/usuarios/novo/salvar}" method="post">
+			<label for="nomeUsuario" class="form-label">Nome:</label>
+			<input type="text" id="nomeUsuario" name="nomeUsuario" class="form-control mb-3" required>
+
+			<label for="cpfUsuario" class="form-label">CPF:</label>
+			<input type="text" id="cpfUsuario" name="cpfUsuario" class="form-control mb-3" required>
+
+			<label for="enderecoUsuario" class="form-label">Endereço:</label>
+			<input type="text" id="enderecoUsuario" name="enderecoUsuario" class="form-control mb-3" required>
+
+			<label for="telefoneUsuario" class="form-label">Telefone:</label>
+			<input type="text" id="telefoneUsuario" name="telefoneUsuario" class="form-control mb-3" required>
+
+			<label for="emailUsuario" class="form-label">E-mail:</label>
+			<input type="email" id="emailUsuario" name="emailUsuario" class="form-control mb-3" required>
+
+			<label for="senhaUsuario" class="form-label">Senha:</label>
+			<input type="password" id="senhaUsuario" name="senhaUsuario" class="form-control mb-3" required>
+
+			<div class="mb-3 form-check">
+				<input type="checkbox" id="aceitarTermos" class="form-check-input" required>
+				<label for="aceitarTermos" class="form-check-label">Eu li e concordo com os termos de serviço</label>
+				<a href="#">Termos de serviço</a>
+			</div>
+
+			<div class="mb-3 form-check">
+				<input type="checkbox" id="autorizacao" class="form-check-input" required>
+				<label for="autorizacao" class="form-check-label">Autorizo o uso dos meus dados para fins de
+					contato e promoções</label>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Criar Conta</button>
+		</form>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

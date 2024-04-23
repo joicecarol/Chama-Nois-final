@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Footer</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+	<div th:fragment="footer" class="rodape mt-5">
+		<footer class="text-black text-center p-5" style="background-color: #ff9900;">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-4">
+						<h5>Informações :</h5>
+						<div class="mb-3">
+							<a th:href="@{/privacidade}" class="text-dark">Política de Privacidade</a>
+						</div>
+						<div>
+							<a th:href="@{/termos}" class="text-dark">Termos de Serviço</a>
+						</div>
+					</div>
+
+					<div class="col-md-4 d-flex">
+						<div class=" mx-auto mt-4">
+							<img src="https://raw.githubusercontent.com/Chama-Nois/chama_nois_final/main/imagens/icon.png"
+								alt="" width="75">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<h5>Contato :</h5>
+						<p>Email: contato@chamanois.com</p>
+						<p>Telefone: (99) 9361-4814</p>
+					</div>
+
+				</div>
+				<hr>
+				<p>Todos os direitos reservados &copy;</p>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

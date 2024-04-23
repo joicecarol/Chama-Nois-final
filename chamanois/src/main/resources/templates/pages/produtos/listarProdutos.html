@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Produtos - Chama Nois</title>
+	<link rel="shortcut icon" href="https://raw.githubusercontent.com/Chama-Nois/chama_nois_final/main/imagens/icon.png"
+		type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column" style="min-height: 100vh;">
+	<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+
+	<div class="container mt-3 flex-grow-1">
+		<a class="btn btn-warning btn-lg btn-block mb-2" th:href="@{/produtos/novo}"
+			sec:authorize="hasRole('ADMIN')">Adicionar Produto</a>
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+			<div th:each="produto : ${produtos}" class="col-md-4 d-flex">
+				<div class="p-2 border flex-fill mb-4">
+					<img class="product-image mx-auto d-block img-fluid h-50" th:src="${produto.imgUrl}"
+						alt="Imagem do Produto">
+					<h3 class="product-title text-center" th:text="${produto.nomeProduto}"></h3>
+					<p class="text-center" th:text="${produto.descricaoProduto}"></p>
+					<p class="font-weight-bold text-center" style="font-size: 2em;"><strong
+							th:text="'R$ ' + ${produto.valorProduto}"></strong></p>
+					<p th:text="${#strings.arrayJoin(produto.empresas.![nomeEmpresa], ', ')}"></p>
+					<div class="d-flex">
+						<a sec:authorize="isAnonymous()" class="btn btn-info flex-fill mx-2" th:href=" @{/login}">Faça
+							login para comprar</a>
+						<a class="btn btn-warning flex-fill mx-2" sec:authorize="hasRole('COMUM')">Comprar Agora</a>
+						<a class="btn btn-primary flex-fill mx-2"
+							th:href="@{'/produtos/editar/' + ${produto.idProduto}}"
+							sec:authorize="hasRole('ADMIN')">Editar</a>
+						<a class="btn btn-danger flex-fill mx-2"
+							th:href="@{'/produtos/deletar/' + ${produto.idProduto}}"
+							sec:authorize="hasRole('ADMIN')">Excluir</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div th:replace="~{fragments/footer :: footer}"></div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+</html>
